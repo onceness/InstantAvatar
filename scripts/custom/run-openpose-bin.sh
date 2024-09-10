@@ -1,3 +1,5 @@
+# bash scripts/custom/run-openpose-bin.sh data/images
+
 #!/bin/bash
 # Check if path is specified as an argument
 if [ -z "$1" ]; then
@@ -12,7 +14,7 @@ if [ ! -d "$1" ]; then
 fi
 
 # Set the path to your OpenPose installation
-OPENPOSE_PATH="$HOME/third_party/openpose-cpp/"
+OPENPOSE_PATH="$HOME/openpose/"
 
 # Set the path to the absoulte folder containing the images
 IMAGE_FOLDER=$1

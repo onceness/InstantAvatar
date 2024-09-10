@@ -18,11 +18,14 @@ def convert(JSON_FOLDER, NPY_PATH):
             with open(JSON_PATH, 'r') as f:
                 data = json.load(f)
             
-            # Extract the pose data from the JSON data
-            pose_data = np.array(data['people'][0]['pose_keypoints_2d']).reshape((-1, 3))
-            
-            # Add the pose data to the list
-            pose_data_list.append(pose_data)
+            try:
+                # Extract the pose data from the JSON data
+                pose_data = np.array(data['people'][0]['pose_keypoints_2d']).reshape((-1, 3))
+                
+                # Add the pose data to the list
+                pose_data_list.append(pose_data)
+            except:
+                print(JSON_FILE)
 
     # Convert the list of pose data arrays to a single NumPy array
     pose_data_array = np.stack(pose_data_list, axis=0)

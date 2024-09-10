@@ -31,3 +31,5 @@ if __name__ == "__main__":
         img = cv2.imread(fn.replace("masks_sam", "images"))
         img[~mask] = 0
         cv2.imwrite(fn.replace("masks_sam", "masked_images"), img)
+
+# ffmpeg -framerate 24 -pix_fmt yuv420p -y -i data/insav_wild/test2/masked_images/*.png data/insav_wild/test2/masked_images.mp4

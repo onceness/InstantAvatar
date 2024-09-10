@@ -1,4 +1,9 @@
 #!/bin/bash
+# mkdir -p ~/data/test9 & ffmpeg -i ~/data/test9.mp4 -r 10 ~/data/test9/images/%3d.png
+# fix aitviewer
+# export DISPLAY=:0.0
+# Xvfb :0 -screen 0 640x480x24 &
+# bash scripts/custom/process-sequence.sh ./data/custom/test9 neutral
 
 # Check if path is specified as an argument
 if [ -z "$1" ]; then
